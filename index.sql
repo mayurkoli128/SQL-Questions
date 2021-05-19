@@ -82,3 +82,10 @@ Question 14: Can we join two tables without primary-foreign key relation?
 Question 15: if primary foreign key relation is not mandatory for 2 tables to be joined then what is the use of these keys?
     => Primary key enforces uniqueness of values over one or more columns. Since ID is not a primary key in Departments table, 2 or more departments may end up having same ID value, which makes it impossible to distinguish between them based on the ID column value.
     Foreign key enforces referential integrity. Without foreign key constraint on DepartmentId column in Employees table, it is possible to insert a row into Employees table with a value for DepartmentId column that does not exist in Departments table.
+
+Question 16: How to create empty tables with the same structure as another table?
+    => Creating empty tables with the same structure can be done smartly by fetching the records of one table into a new table using the INTO operator while fixing a WHERE clause to be false for all records. Hence, SQL prepares the new table with a 
+    duplicate structure to accept the fetched records but since no records get fetched due to the WHERE clause in action, nothing is inserted into the new table.
+    For example - 
+    SELECT * INTO Students_copy
+    FROM Students WHERE 1 = 2;  
