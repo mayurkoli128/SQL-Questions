@@ -77,15 +77,20 @@ Question 13: Can you tell me the purpose of Right Join?
 
 Question 14: Can we join two tables without primary-foreign key relation?
     =>  Yes, we can join two tables without primary foreign key relation as long as the column values involved in the join can be converted to one type.
-    ID column in Departments table is not the primary Key and DepartmentId column in Employees table is not the foreign key. But we can still join these tables using ID column from Departments table and DepartmentId column from Employees table, as both the columns involved in the join have same data type i.e int.
+    ID column in Departments table is not the primary Key and DepartmentId column in Employees table is not the foreign key. But we can still join these 
+    tables using ID column from Departments table and DepartmentId column from Employees table, as both the columns involved in the join have same data type 
+    i.e int.
 
 Question 15: if primary foreign key relation is not mandatory for 2 tables to be joined then what is the use of these keys?
-    => Primary key enforces uniqueness of values over one or more columns. Since ID is not a primary key in Departments table, 2 or more departments may end up having same ID value, which makes it impossible to distinguish between them based on the ID column value.
-    Foreign key enforces referential integrity. Without foreign key constraint on DepartmentId column in Employees table, it is possible to insert a row into Employees table with a value for DepartmentId column that does not exist in Departments table.
+    => Primary key enforces uniqueness of values over one or more columns. Since ID is not a primary key in Departments table, 2 or more departments may 
+    end up having same ID value, which makes it impossible to distinguish between them based on the ID column value.Foreign key enforces referential integrity.
+    Without foreign key constraint on DepartmentId column in Employees table, it is possible to insert a row 
+    into Employees table with a value for DepartmentId column that does not exist in Departments table.
 
 Question 16: How to create empty tables with the same structure as another table?
-    => Creating empty tables with the same structure can be done smartly by fetching the records of one table into a new table using the INTO operator while fixing a WHERE clause to be false for all records. Hence, SQL prepares the new table with a 
-    duplicate structure to accept the fetched records but since no records get fetched due to the WHERE clause in action, nothing is inserted into the new table.
+    => Creating empty tables with the same structure can be done smartly by fetching the records of one table into a new table using the INTO operator while 
+    fixing a WHERE clause to be false for all records. Hence, SQL prepares the new table with a duplicate structure to accept the fetched records but since no 
+    records get fetched due to the WHERE clause in action, nothing is inserted into the new table.
     For example - 
     SELECT * INTO Students_copy
     FROM Students WHERE 1 = 2;  
