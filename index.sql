@@ -1,4 +1,5 @@
-Koli
+
+
 Question 1 : How to find Nth largest salary? 
 =>    N = 4 ;
     select salary from 
